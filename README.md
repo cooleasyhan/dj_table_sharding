@@ -100,7 +100,7 @@ Out[13]:
   'pk__sum': Decimal('7178070497'),
   'pk__variance': 446969652198.49615}]
 
-In [15]: SmsMsg.as_manager(1,2).filter(mobile='15001368927').aggregate(Max('pk'), Count('pk'), Avg('pk'), Min('pk'), StdDev('pk'), Sum('pk'), Variance('pk'))
+In [15]: SmsMsg.as_manager(1,2).filter(mobile='15001234567').aggregate(Max('pk'), Count('pk'), Avg('pk'), Min('pk'), StdDev('pk'), Sum('pk'), Variance('pk'))
 Out[15]: [{'pk__max': 2144170, 'pk__count': 6929, 'pk__avg': Decimal('1028130.8183'), 'pk__min': 13, 'pk__stddev': 681050.7840290959, 'pk__sum': Decimal('7123918440'), 'pk__variance': 463830170426.64624}, {'pk__max': 2021552, 'pk__count': 6926, 'pk__avg': Decimal('994947.7571'), 'pk__min': 5, 'pk__stddev': 640605.0279375393, 'pk__sum': Decimal('6891008166'), 'pk__variance': 410374801818.8555}, {'pk__max': 2102226, 'pk__count': 6937, 'pk__avg': Decimal('1034751.4051'), 'pk__min': 9, 'pk__stddev': 668557.8899381086, 'pk__sum': Decimal('7178070497'), 'pk__variance': 446969652198.49615}]
 
 In [16]: _.x_agg()
@@ -114,11 +114,11 @@ Out[16]:
  'pk__variance': 'y'}
 
 
-In [19]: SmsMsg.as_manager(1,2).filter(mobile='15001368927').values_list('mobile').distinct().x_distinct()
-Out[19]: [('15001368927',)]
+In [19]: SmsMsg.as_manager(1,2).filter(mobile='15001234567').values_list('mobile').distinct().x_distinct()
+Out[19]: [('15001234567',)]
 
-In [20]: SmsMsg.as_manager(1,2).filter(mobile='15001368927').values_list('mobile').distinct()
-Out[20]: [<QuerySet [('15001368927',)]>, <QuerySet [('15001368927',)]>, <QuerySet [('15001368927',)]>]
+In [20]: SmsMsg.as_manager(1,2).filter(mobile='15001234567').values_list('mobile').distinct()
+Out[20]: [<QuerySet [('15001234567',)]>, <QuerySet [('15001234567',)]>, <QuerySet [('15001234567',)]>]
 
 
 ```
